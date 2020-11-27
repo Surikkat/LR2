@@ -20,7 +20,7 @@ public:
     ~MainWindow();//Деструктор
 
 private slots:
-    void core();//Главный алгоритм заполнения и сортировки словаря
+    void core();//Главный алгоритм заполнения и вывода словаря
     void inputMap();//Заполнение Qmap
     void outputMap();//Вывод Qmap в файл
 
@@ -32,11 +32,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;//Главное окно
-    QString fileName="";//Имя файла с текстом
-    QFile reading;//Файл считывания
+    QString fileName="";//Имя файла ввода
+    QFile reading;//Файл ввода
     bool sortingType = true;//Тип сортировки (1-алфавитная    0-по частоте)
     QString fileOutputName="";//Имя файла для вывода
-    QFile recording;//Файл записи
+    QFile recording;//Файл для вывода
     QMap<QString,int> dictionary; //Словарь (ключ-значение)
 };
 #endif // MAINWINDOW_H
