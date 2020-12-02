@@ -31,7 +31,7 @@ private slots:
     void on_startButton_clicked();//Обработка нажатия на кнопку старта
 
 private:
-    Ui::MainWindow *ui;//Главное окно
+    Ui::MainWindow *ui;
     QString fileName="";//Имя файла ввода
     QFile reading;//Файл ввода
     bool sortingType = true;//Тип сортировки (1-алфавитная    0-по частоте)

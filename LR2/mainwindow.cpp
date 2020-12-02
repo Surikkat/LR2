@@ -69,31 +69,31 @@ void MainWindow::inputMap()
             foreach(QChar sym, line){
                 find = false;
                 //Если символ это буква или дефис (учитываются слова с дефисом)
-                if(sym.isLetter()||sym=='-'){
+                if((sym.isLetter()||sym=='-')&&(sym!=' ')){
                     //Прибавляем букву к слову
                     word+=sym;
                     //Если не буква, значит конец слова
-                }else{
+                }
+                else{
                     //Перебираем все ключи из словаря
                     foreach(key,dictionary.keys()){
                         //Если среди ключей есть наше слово
-                        if(key==word){
+                        if((key==word)&&(word!="")){
                             //Ставим метку что слово найденно
                             find=true;
                             dictionary[word]++;//увеличиваем его частоту на единицу
                             word = "";
                         }
-                        }
+                     }
                     //Если слово не найденно добавляем слово в словарь со значением 1
-                    if(!find){
+                    if((!find)&&(word!="")){
                             dictionary.insert(word,1);
                             word = "";
                     }
-                    }
-                }
-            }
-
+               }
+           }
         }
+    }
 reading.close();
 }
 
